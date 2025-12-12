@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>画像ダウンロードサイト</title>
+    <title>画像＆データ ダウンロードサイト</title>
     <style>
         body {
             font-family: sans-serif;
@@ -35,10 +35,16 @@
             border-radius: 4px;
             margin-bottom: 10px;
         }
+        /* Excel用のアイコン（文字サイズで調整） */
+        .file-icon {
+            font-size: 80px;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
         .card p {
             font-weight: bold;
             margin: 5px 0;
-            word-break: break-all; /* 長いファイル名でも折り返す設定 */
+            word-break: break-all;
         }
         .download-btn {
             display: inline-block;
@@ -48,29 +54,38 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            cursor: pointer;
         }
-        .download-btn:hover {
-            background-color: #0056b3;
+        /* Excelボタンは緑色にする */
+        .download-btn.excel {
+            background-color: #217346;
         }
+        .download-btn:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
 
     <h1>分析データギャラリー</h1>
-    <p>以下のボタンからグラフ画像をダウンロードできます。</p>
+    <p>画像やExcelデータをダウンロードできます。</p>
 
     <div class="gallery">
         
         <div class="card">
             <img src="images/OLS_saisyu.png" alt="OLS分析結果">
             <p>OLS saisyu</p>
-            <a href="images/OLS_saisyu.png" download class="download-btn">ダウンロード</a>
+            <a href="images/OLS_saisyu.png" download class="download-btn">画像DL</a>
         </div>
 
         <div class="card">
             <img src="images/TOPIX_vs_Opimized_last.png" alt="TOPIX比較データ">
-            <p>TOPIX vs Optimized (Last)</p>
-            <a href="images/TOPIX_vs_Opimized_last.png" download class="download-btn">ダウンロード</a>
+            <p>TOPIX vs Optimized</p>
+            <a href="images/TOPIX_vs_Opimized_last.png" download class="download-btn">画像DL</a>
+        </div>
+
+        <div class="card">
+            <div class="file-icon">📊</div>
+            <p>29.xlsx</p>
+            <a href="images/29.xlsx" download class="download-btn excel">Excel DL</a>
         </div>
 
     </div>
