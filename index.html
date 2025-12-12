@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像ダウンロードサイト</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 { color: #333; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>分析データギャラリー</h1>
+    <p>以下のボタンからグラフ画像をダウンロードできます。</p>
+
+    <div class="gallery">
+        
+        <div class="card">
+            <img src="images/TOPIXvsoptimized.png" alt="TOPIX vs Optimized">
+            <p>TOPIX vs Optimized</p>
+            <a href="images/TOPIXvsoptimized.png" download class="download-btn">ダウンロード</a>
+        </div>
+
+        <div class="card">
+            <img src="images/yosoku1.png" alt="予測グラフ1">
+            <p>予測データ 1</p>
+            <a href="images/yosoku1.png" download class="download-btn">ダウンロード</a>
+        </div>
+
+        <div class="card">
+            <img src="images/yosoku2.png" alt="予測グラフ2">
+            <p>予測データ 2</p>
+            <a href="images/yosoku2.png" download class="download-btn">ダウンロード</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
