@@ -3,91 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>画像＆データ ダウンロードサイト</title>
+    <title>PDFダウンロード</title>
     <style>
         body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
-        h1 { color: #333; }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .card {
+        h1 { color: #2c3e50; }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
             background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-        /* Excel用のアイコン（文字サイズで調整） */
         .file-icon {
-            font-size: 80px;
-            margin-bottom: 10px;
-            line-height: 1;
+            font-size: 100px;
+            margin-bottom: 20px;
+            display: block;
         }
-        .card p {
+        .file-name {
+            font-size: 1.2rem;
             font-weight: bold;
-            margin: 5px 0;
-            word-break: break-all;
+            color: #333;
+            margin-bottom: 30px;
         }
         .download-btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
+            padding: 15px 35px;
+            background-color: #e74c3c; /* PDFをイメージした赤 */
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
             font-weight: bold;
-            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
         }
-        /* Excelボタンは緑色にする */
-        .download-btn.excel {
-            background-color: #217346;
+        .download-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
         }
-        .download-btn:hover { opacity: 0.8; }
+        .hint {
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <h1>分析データギャラリー</h1>
-    <p>画像やExcelデータをダウンロードできます。</p>
+    <h1>資料ダウンロード</h1>
 
-    <div class="gallery">
+    <div class="container">
+        <div class="file-icon">📄</div>
+        <div class="file-name">test.pdf</div>
         
-        <div class="card">
-            <img src="images/OLS_saisyu.png" alt="OLS分析結果">
-            <p>OLS saisyu</p>
-            <a href="images/OLS_saisyu.png" download class="download-btn">画像DL</a>
-        </div>
-
-        <div class="card">
-            <img src="images/TOPIX_vs_Opimized_last.png" alt="TOPIX比較データ">
-            <p>TOPIX vs Optimized</p>
-            <a href="images/TOPIX_vs_Opimized_last.png" download class="download-btn">画像DL</a>
-        </div>
-
-        <div class="card">
-            <div class="file-icon">📊</div>
-            <p>29.xlsx</p>
-            <a href="images/29.xlsx" download class="download-btn excel">Excel DL</a>
-        </div>
-
+        <a href="images/test.pdf" download="test.pdf" class="download-btn">
+            PDFをダウンロード
+        </a>
+        
+        <p class="hint">クリックするとファイルを保存、またはブラウザで表示します。</p>
     </div>
 
 </body>
